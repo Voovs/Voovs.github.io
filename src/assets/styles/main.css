@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap");
+@font-face {
+  font-family: poetsenOne;
+  src: url("../fonts/PoetsenOne-Regular.ttf");
+}
+body {
+  margin: 0;
+  font-family: "source sans pro";
+}
+body .theme-buttom-parent {
+  z-index: 10;
+  position: sticky;
+  top: 0px;
+}
+body .theme-buttom-parent #theme-svg {
+  position: -webkit-sticky;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  cursor: pointer;
+}
+body .footer .left-comlumn .crop-container {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+body .footer .left-comlumn .crop-container img {
+  width: 150px;
+  height: 150px;
+}
+
+.light {
+  background-color: white;
+}
+.light #theme-svg .theme-button {
+  fill: #f18b47;
+  stroke: #30cfd0;
+}
+.light #theme-svg .theme-button:hover {
+  fill: #7289DA;
+  stroke: #2C2F33;
+}
+
+.dark {
+  background-color: #2C2F33;
+}
+.dark #theme-svg .theme-button {
+  fill: #7289DA;
+  stroke: #2C2F33;
+}
+.dark #theme-svg .theme-button:hover {
+  fill: #F84A96;
+  stroke: #1EC2F6;
+}
+
+.frozen {
+  background-color: white;
+}
+.frozen #theme-svg .theme-button {
+  fill: #F84A96;
+  stroke: #1EC2F6;
+}
+.frozen #theme-svg .theme-button:hover {
+  fill: #f18b47;
+  stroke: #30cfd0;
+}
+
+/*# sourceMappingURL=main.css.map */
