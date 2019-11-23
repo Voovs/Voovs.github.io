@@ -3,7 +3,12 @@
   font-family: poetsenOne;
   src: url("../fonts/PoetsenOne-Regular.ttf");
 }
+.home {
+  overflow-x: hidden;
+}
 .home .header {
+  position: fixed;
+  z-index: -1;
   margin: 0;
   width: 100%;
   display: flex;
@@ -32,7 +37,7 @@
   font-size: 100px;
   user-select: none;
 }
-.home .header img {
+.home .header .header-image {
   width: 60%;
   clip-path: polygon(0 0, 75% 0, 100% 100%, 0 100%);
   -webkit-transform: scaleX(-1);
@@ -41,8 +46,14 @@
   transform: scaleX(-1);
   user-select: none;
 }
-.home .project-title {
-  margin: 40px;
+.home .project-title-wrapper {
+  padding-top: 10px;
+  padding-bottom: 40px;
+  width: 110vw;
+}
+.home .project-title-wrapper .project-title {
+  margin: 0;
+  margin-left: 40px;
   font-weight: 700;
   border-bottom: 5px solid;
   border-radius: 2px;
@@ -50,64 +61,118 @@
   overflow: visible;
 }
 .home .projects {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   margin: 0;
   width: 100%;
-  height: 400px;
+  height: 440px;
 }
-.home .projects .project-card {
+.home .projects .card-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  width: 1400px;
+  height: 200px;
+}
+.home .projects .card-row .project-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-self: flex-start;
   margin: 5px;
   border-radius: 20px 20px 0 0;
-  width: 250px;
+  width: 300px;
   height: 200px;
   background-color: white;
   overflow: hidden;
+  transition-property: transform, box-shadow;
+  transition-duration: 700ms;
+  transition-timing-function: ease;
 }
-.home .projects .project-card .text-parent {
+.home .projects .card-row .project-card .text-parent {
   order: 1;
 }
-.home .projects .project-card .project-name {
+.home .projects .card-row .project-card .project-name {
   align-self: center;
   margin-top: 20px;
   text-align: center;
 }
-.home .projects .project-card .description {
+.home .projects .card-row .project-card .description {
   margin: 15px;
 }
-.home .projects .project-card .edge-wave {
+.home .projects .card-row .project-card svg {
   order: 2;
-  position: relative;
-  top: 1px;
   align-self: flex-end;
   margin: 0;
-  width: 100%;
-  height: 20px;
-  background: transparent url("../images/wave.svg") bottom center no-repeat;
-  background-size: 200%;
+  width: 300px;
+  height: 14.21px;
 }
-.home .projects .project-card:nth-child(2n) {
+.home .projects .card-row .project-card:nth-child(2) svg {
+  transform: rotateY(180deg);
+}
+.home .projects .card-row .project-card:hover {
+  box-shadow: 0 3px -3px -3px white;
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+.home .projects .bottom-row {
+  margin: auto;
+  margin-top: 40px;
+  width: 725px;
+  justify-content: space-between;
+}
+.home .projects .bottom-row .project-card {
   justify-content: flex-start;
   align-self: flex-end;
   border-radius: 0 0 20px 20px;
 }
-.home .projects .project-card:nth-child(2n) .text-parent {
+.home .projects .bottom-row .project-card .text-parent {
   order: 3;
 }
-.home .projects .project-card:nth-child(2n) .project-name {
-  margin: 0;
+.home .projects .bottom-row .project-card .project-name {
+  margin: 10px 0 20px 0;
 }
-.home .projects .project-card:nth-child(2n) .edge-wave {
+.home .projects .bottom-row .project-card svg {
   position: relative;
   top: -1px;
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  transform: rotate(180deg);
+  height: 15.3px;
+  -webkit-transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+.home .projects .bottom-row .project-card:nth-child(2) svg {
+  transform: rotateY(180deg) rotateX(180deg);
+}
+.home .quotes span {
+  display: block;
+  font-size: 40px;
+}
+.home .quotes span:nth-child(1) {
+  transform: rotateX(80deg);
+}
+.home .quotes span:nth-child(2) {
+  transform: rotateX(60deg);
+}
+.home .quotes span:nth-child(3) {
+  transform: rotateX(40deg);
+}
+.home .quotes span:nth-child(4) {
+  transform: rotateX(20deg);
+}
+.home .quotes span:nth-child(5) {
+  transform: rotateX(0deg);
+}
+.home .quotes span:nth-child(6) {
+  transform: rotateX(-20deg);
+}
+.home .quotes span:nth-child(7) {
+  transform: rotateX(-40deg);
+}
+.home .quotes span:nth-child(8) {
+  transform: rotateX(-60deg);
+}
+.home .quotes span:nth-child(9) {
+  transform: rotateX(-80deg);
 }
 
 .light .home .header {
@@ -116,11 +181,23 @@
 .light .home .header .left p:nth-child(2) span {
   color: #f18b47;
 }
-.light .home .project-title {
+.light .home .non-header-content {
+  background-color: white;
+}
+.light .home .project-title-wrapper {
+  background-color: white;
+}
+.light .home .project-title-wrapper .project-title {
   border-color: #f18b47;
+}
+.light .home .projects {
+  background-color: white;
 }
 .light .home .projects .project-card {
   background: linear-gradient(#f36d45, #f18b47, #eea448);
+}
+.light .home .projects .project-card svg path {
+  fill: white;
 }
 
 .dark {
@@ -129,20 +206,27 @@
 .dark .home .header {
   background: radial-gradient(#304eb6 15%, transparent 16%) 0 0;
   background-color: #2C2F33;
-  color: #c5cfd5;
 }
 .dark .home .header .left p:nth-child(2) span {
   color: #7289DA;
 }
-.dark .home .project-title {
+.dark .home .non-header-content {
+  background-color: #2C2F33;
+}
+.dark .home .project-title-wrapper {
+  background-color: #2C2F33;
+}
+.dark .home .project-title-wrapper .project-title {
   border-color: #7289DA;
+}
+.dark .home .projects {
+  background-color: #2C2F33;
 }
 .dark .home .projects .project-card {
   background: linear-gradient(#7289DA, #4a67cf);
 }
-.dark .home .projects .project-card .edge-wave {
-  background: transparent url("../images/wave_dark.svg") bottom center no-repeat;
-  background-size: 200%;
+.dark .home .projects .project-card svg path {
+  fill: #2C2F33;
 }
 
 .frozen {
@@ -155,15 +239,23 @@
 .frozen .home .header .left p:nth-child(2) span {
   color: #F84A96;
 }
-.frozen .home .project-title {
+.frozen .home .non-header-content {
+  background-color: #95D2F7;
+}
+.frozen .home .project-title-wrapper {
+  background-color: #95D2F7;
+}
+.frozen .home .project-title-wrapper .project-title {
   border-color: #F84A96;
+}
+.frozen .home .projects {
+  background-color: #95D2F7;
 }
 .frozen .home .projects .project-card {
   background: linear-gradient(#F84A96, #fa7bb2);
 }
-.frozen .home .projects .project-card .edge-wave {
-  background: transparent url("../images/wave_frozen.svg") bottom center no-repeat;
-  background-size: 200%;
+.frozen .home .projects .project-card svg path {
+  fill: #95D2F7;
 }
 
 /*# sourceMappingURL=home.css.map */

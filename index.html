@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Voovs's site</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="src/assets/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="src/assets/styles/home.css">
+    <link rel="stylesheet" type="text/css" href="src/assets/styles/my-footer.css">
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  </head>
+
+  <body class="dark" id="body">
+    <div class="theme-button-parent">
+      <svg
+        height="80"
+        width="80"
+        id="theme-svg">
+        <title>Enable Frozen theme</title>
+        <circle
+          cx="40"
+          cy="40"
+          r="30"
+          stroke-width="10"
+          class="theme-button">
+        </circle>
+      </svg>
+    </div>
+    <div id="app">
+      <!-- {{ color }} -->
+      <home></home>
+      <my-footer></my-footer>
+    </div>
+  </body>
+
+  <script src="public/vue.js"></script>
+  <script src="public/vue-router.js"></script>
+  <script src="src/main.js"></script>
+  <script src="src/views/home.js"></script>
+  <script src="src/components/my-footer.js"></script>
+  <script src="src/app.js"></script>
+
+</html>

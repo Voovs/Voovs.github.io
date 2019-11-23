@@ -3,7 +3,7 @@
 body
   margin: 0
   font-family: 'source sans pro'
-  .theme-buttom-parent
+  .theme-button-parent
     z-index: 10
     position: sticky
     top: 0px
@@ -27,29 +27,35 @@ body
 .light
   background-color: white
   #theme-svg .theme-button
-   fill: $c_main
-   stroke: $ac_light
+   fill: white
+   stroke: $c_main
    &:hover
-    fill: $cd_main
-    stroke: $cd_dark
+    fill: $cd_dark
+    stroke: $cd_main
+  .footer
+    background-color: white
 
 .dark
   background-color: $cd_dark
   #theme-svg .theme-button
-   fill: $cd_main
-   stroke: $cd_dark
+   fill: $cd_dark
+   stroke: $cd_main
    &:hover
-    fill: $cf_dark
-    stroke: $cf_main
+    fill: $cf_light
+    stroke:  $cf_dark
+  .footer
+    background-color: $cd_dark
 
 .frozen
   background-color: white
   #theme-svg .theme-button
-   fill: $cf_dark
-   stroke: $cf_main
+   fill: $cf_light
+   stroke:  $cf_dark
    &:hover
-    fill: $c_main
-    stroke: $ac_light
+    fill: white
+    stroke: $c_main
+  .footer
+    background-color: $cf_light
 
 
 

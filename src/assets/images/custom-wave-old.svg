@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="37" viewBox="149 65 1501 135">
+  <!-- Bezier end point at 1800 100. +/- v inverts -->
+  <path
+    d="M 0 100
+       q 150 70, 300 0
+       t 300 0, t 300 0, t 300 0, t 300 0, t 300 0
+       v 35
+       H 0
+       Z
+       "
+    fill-rule= "nonzero"
+    fill="#2C2F33" />
+</svg>

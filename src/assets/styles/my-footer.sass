@@ -1,0 +1,125 @@
+@import "variables"
+
+@keyframes shimmer-right
+    0%
+      background-position: -10rem top
+      transform: translateX(0)
+    50%
+      transform: translateX(10px)
+    100%
+      background-position: 10rem top
+      transform: translateX(0)
+@keyframes shimmer-left
+    0%
+      background-position: 10rem top
+      transform: translateX(0)
+    50%
+      transform: translateX(10px)
+    100%
+      background-position: -10rem top
+      transform: translateX(0)
+
+.my-footer
+  display: flex
+  flex-direction: row
+  justify-content: space-evenly
+  align-items: stretch
+  padding: 20px 0
+  width: 99.9%
+  height: 220px
+  background-color: white
+  .column
+    .column-title
+      font-size: 40px
+      font-weight: 700
+      &:hover
+        cursor: default
+    ul
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+      align-items: center
+      list-style-type: none
+      margin: 0
+      padding: 0
+      padding-top: 10px
+      height: 100px
+      font-size: 27px
+      a
+        display: block
+        text-align: center
+        &:hover
+          cursor: pointer
+  .left-column
+    .crop-container
+      border-radius: 50%
+      width: 190px
+      height: 190px
+      overflow: hidden
+      img
+        width: 100%
+        height: 100%
+
+.light .my-footer
+  background-color: black
+  .column
+    color: white
+    .shiny
+      color: white
+      background: #acacac -webkit-gradient(linear, 100% 0, 0 0, from(#acacac), color-stop(0.5, #ffffff), to(#acacac))
+      background-position: -4rem top
+      //50px
+      background-repeat: no-repeat
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      -webkit-animation-name: shimmer
+      -webkit-animation-duration: 2.2s
+      -webkit-animation-iteration-count: infinite
+      -webkit-background-size: 4rem 100%
+      //50px
+    a
+      &:hover:not(.column-title)
+        color: darken(white, 30)
+
+.dark .my-footer
+  background-color: $ad_light
+  .column
+    color: $ad_dark
+    a
+      &:hover:not(.column-title)
+        color: lighten($ad_dark, 30)
+    .shimmer
+      color: black
+      background: $ad_dark -webkit-gradient(linear, 100% 0, 0 0, from($ad_dark), color-stop(0.5, #acacac), to($ad_dark))
+      background-position: -4rem top
+      background-repeat: no-repeat
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      -webkit-animation-duration: 3s
+      -webkit-animation-iteration-count: infinite
+      -webkit-background-size: 4rem 100%
+    .shimmer-right
+      -webkit-animation-name: shimmer-right
+    .shimmer-left
+      -webkit-animation-name: shimmer-left
+
+.frozen .my-footer
+  background-color: $cf_dark
+  .column
+    color: $cf_light
+    a
+      &:hover:not(.column-title)
+        color: darken($cf_light, 30)
+      strong .shimmer-right
+        color: white
+        background: #acacac -webkit-gradient(linear, 100% 0, 0 0, from(#acacac), color-stop(0.5, #ffffff), to(#acacac))
+        background-position: -4rem top
+        //50px
+        background-repeat: no-repeat
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        -webkit-animation-name: shimmerRight
+        -webkit-animation-duration: 2.2s
+        -webkit-animation-iteration-count: infinite
+        -webkit-background-size: 4rem 100%
+        //50px

@@ -7,12 +7,12 @@ body {
   margin: 0;
   font-family: "source sans pro";
 }
-body .theme-buttom-parent {
+body .theme-button-parent {
   z-index: 10;
   position: sticky;
   top: 0px;
 }
-body .theme-buttom-parent #theme-svg {
+body .theme-button-parent #theme-svg {
   position: -webkit-sticky;
   position: absolute;
   top: 40px;
@@ -34,36 +34,45 @@ body .footer .left-comlumn .crop-container img {
   background-color: white;
 }
 .light #theme-svg .theme-button {
-  fill: #f18b47;
-  stroke: #30cfd0;
+  fill: white;
+  stroke: #f18b47;
 }
 .light #theme-svg .theme-button:hover {
-  fill: #7289DA;
-  stroke: #2C2F33;
+  fill: #2C2F33;
+  stroke: #7289DA;
+}
+.light .footer {
+  background-color: white;
 }
 
 .dark {
   background-color: #2C2F33;
 }
 .dark #theme-svg .theme-button {
-  fill: #7289DA;
-  stroke: #2C2F33;
+  fill: #2C2F33;
+  stroke: #7289DA;
 }
 .dark #theme-svg .theme-button:hover {
-  fill: #F84A96;
-  stroke: #1EC2F6;
+  fill: #95D2F7;
+  stroke: #F84A96;
+}
+.dark .footer {
+  background-color: #2C2F33;
 }
 
 .frozen {
   background-color: white;
 }
 .frozen #theme-svg .theme-button {
-  fill: #F84A96;
-  stroke: #1EC2F6;
+  fill: #95D2F7;
+  stroke: #F84A96;
 }
 .frozen #theme-svg .theme-button:hover {
-  fill: #f18b47;
-  stroke: #30cfd0;
+  fill: white;
+  stroke: #f18b47;
+}
+.frozen .footer {
+  background-color: #95D2F7;
 }
 
 /*# sourceMappingURL=main.css.map */
