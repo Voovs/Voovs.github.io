@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap");
+@font-face {
+  font-family: poetsenOne;
+  src: url("../fonts/PoetsenOne-Regular.ttf");
+}
+@keyframes shimmer-right {
+  0% {
+    background-position: -10rem top;
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    background-position: 10rem top;
+    transform: translateX(0);
+  }
+}
+@keyframes shimmer-left {
+  0% {
+    background-position: 10rem top;
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    background-position: -10rem top;
+    transform: translateX(0);
+  }
+}
+.my-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: stretch;
+  padding: 20px 0;
+  width: 99.9%;
+  height: 220px;
+  background-color: white;
+}
+.my-footer .column .column-title {
+  font-size: 40px;
+  font-weight: 700;
+}
+.my-footer .column .column-title:hover {
+  cursor: default;
+}
+.my-footer .column ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
+  height: 100px;
+  font-size: 27px;
+}
+.my-footer .column ul a {
+  display: block;
+  text-align: center;
+}
+.my-footer .column ul a:hover {
+  cursor: pointer;
+}
+.my-footer .left-column .crop-container {
+  border-radius: 50%;
+  width: 190px;
+  height: 190px;
+  overflow: hidden;
+}
+.my-footer .left-column .crop-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.light .my-footer {
+  background-color: black;
+}
+.light .my-footer .column {
+  color: white;
+}
+.light .my-footer .column .shiny {
+  color: white;
+  background: #acacac -webkit-gradient(linear, 100% 0, 0 0, from(#acacac), color-stop(0.5, #ffffff), to(#acacac));
+  background-position: -4rem top;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation-name: shimmer;
+  -webkit-animation-duration: 2.2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-background-size: 4rem 100%;
+}
+.light .my-footer .column a:hover:not(.column-title) {
+  color: #b3b3b3;
+}
+
+.dark .my-footer {
+  background-color: #c5cfd5;
+}
+.dark .my-footer .column {
+  color: #23272A;
+}
+.dark .my-footer .column a:hover:not(.column-title) {
+  color: #69747d;
+}
+.dark .my-footer .column .shimmer {
+  color: black;
+  background: #23272A -webkit-gradient(linear, 100% 0, 0 0, from(#23272A), color-stop(0.5, #acacac), to(#23272A));
+  background-position: -4rem top;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-background-size: 4rem 100%;
+}
+.dark .my-footer .column .shimmer-right {
+  -webkit-animation-name: shimmer-right;
+}
+.dark .my-footer .column .shimmer-left {
+  -webkit-animation-name: shimmer-left;
+}
+
+.frozen .my-footer {
+  background-color: #F84A96;
+}
+.frozen .my-footer .column {
+  color: #95D2F7;
+}
+.frozen .my-footer .column a:hover:not(.column-title) {
+  color: #1193e2;
+}
+.frozen .my-footer .column a strong .shimmer-right {
+  color: white;
+  background: #acacac -webkit-gradient(linear, 100% 0, 0 0, from(#acacac), color-stop(0.5, #ffffff), to(#acacac));
+  background-position: -4rem top;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation-name: shimmerRight;
+  -webkit-animation-duration: 2.2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-background-size: 4rem 100%;
+}
+
+/*# sourceMappingURL=my-footer.css.map */
