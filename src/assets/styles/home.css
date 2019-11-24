@@ -67,10 +67,12 @@
   width: 250px;
   height: 200px;
   background-color: white;
+  text-decoration: none;
   overflow: hidden;
 }
 .home .projects .project-card .text-parent {
   order: 1;
+  color: #c5cfd5;
 }
 .home .projects .project-card .project-name {
   align-self: center;

@@ -1,0 +1,40 @@
+@import "variables"
+
+.error-page
+  .container
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    .error-message
+      width: 50%
+      text-align: center
+      font-size: 40px
+      font-weight: 400
+    .home-button
+      font-size: 70px
+      font-weight: 700
+
+.light .error-page
+  .error-message
+    color: black
+  .home-button
+    color: $c_dark
+    &:active
+      color: darken($c_dark, 10)
+
+.dark .error-page
+  .error-message
+    color: $ad_light
+  .home-button
+    color: $cd_main
+    &:active
+      color: lighten($cd_main, 10)
+
+.frozen .error-page
+  .error-message
+    color: darken($af_main, 30)
+  .home-button
+    color: $af_dark
+    &:active
+      color: darken($af_dark, 10)

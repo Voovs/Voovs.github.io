@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Voovs's site</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="src/assets/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="src/assets/styles/home.css">
+    <link rel="stylesheet" type="text/css" href="src/assets/styles/my-footer.css">
+    <link rel="stylesheet" type="text/css" href="src/assets/styles/error-page.css">
+    <link rel="stylesheet" type="text/css" href="src/assets/styles/color-schemer.css">
+
+    <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="src/assets/images/placehold_icon.png" />
+    <link rel="apple-touch-icon" type="image/png" sizes="96x96" href="src/assets/images/placehold_icon.png" />
+    <link rel="apple-touch-icon" type="image/png" sizes="128x128" href="src/assets/images/placehold_icon.png" />
+    <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="src/assets/images/placehold_icon.png" />
+    <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="src/assets/images/placehold_icon.png" />
+    <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="src/assets/images/placehold_icon.png" />
+    <link rel="apple-touch-icon" type="image/png" sizes="384x384" href="src/assets/images/placehold_icon.png" />
+    <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="src/assets/images/placehold_icon.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="src/assets/images/placehold_icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="src/assets/images/placehold_icon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="src/assets/images/placehold_icon.png" />
+    <!-- <link rel="icon" type="image/x-icon" sizes="16x16" href="src/assets/images/placehold_icon.ico" /> -->
+    <meta name="msapplication-TileImage" content="src/assets/images/placehold_icon.png" />
+    <meta name="msapplication-TileColor" content="#f18b47" />
+    <meta name="theme-color" content="#f18b47" />
+    <meta name="msapplication-navbutton-color" content="#f18b47" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#f18b47" />
+    <!-- <link rel="manifest" href="/manifest.json" /> -->
+
+    <script src="public/vue.js"></script>
+    <script src="public/vue-router.js"></script>
+    <script src="src/main.js" type="module"></script>
+  </head>
+
+  <body class="dark" id="body">
+    <div class="theme-button-parent">
+      <svg
+        height="80"
+        width="80"
+        id="theme-svg">
+        <title>Enable Frozen theme</title>
+        <circle
+          cx="40"
+          cy="40"
+          r="30"
+          stroke-width="10"
+          class="theme-button">
+        </circle>
+      </svg>
+    </div>
+
+    <div id="app">
+      <router-view></router-view>
+    </div>
+  </body>
+
+  <script src="src/javascript/themes.js"></script>
+
+
+</html>
