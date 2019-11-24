@@ -1,12 +1,7 @@
-<<<<<<< Updated upstream
-
-Vue.component('home', {
-=======
 import MyFooter from '../components/my-footer.js';
 
 export default {
   name: `Home`,
->>>>>>> Stashed changes
   template: `
   <div class="home">
     <div class="header">
@@ -19,15 +14,6 @@ export default {
         alt="Voovs's profile picture"
         class="header-image">
     </div>
-<<<<<<< Updated upstream
-
-    <h1 class="project-title">Projects</h1>
-    <div class="projects">
-      <div class="project-card" v-for="project in projects">
-        <div class="text-parent">
-          <h1 class="project-name">{{ project.name }}</h1>
-          <div class="description">{{ project.description }}</div>
-=======
     <div class="non-header-content">
       <div class="project-title-wrapper">
         <h1 class="project-title">Projects</h1>
@@ -75,9 +61,7 @@ export default {
               fill="#2C2F33" />
             </svg>
           </router-link>
->>>>>>> Stashed changes
         </div>
-        <div class="edge-wave"></div>
       </div>
     </div>
     <!-- <div class="project-library">
@@ -107,8 +91,6 @@ export default {
         image_url: "/images/sierra",
         path: "/"
         },
-<<<<<<< Updated upstream
-=======
         { name: "Generative art",
         description: "Planned page with examples of generative art",
         image_url: "/images/mojave",
@@ -121,7 +103,6 @@ export default {
         image_url: "/images/h_sierra",
         path: "/color-schemer"
         },
->>>>>>> Stashed changes
         { name: "Fashion organizer",
         description: "Create organized lists for your current and prospective outfits. Integrates colour schemer",
         image_url: "/images/mojave",
@@ -134,25 +115,7 @@ export default {
       ],
     }
   },
-<<<<<<< Updated upstream
-  computed: {
-=======
   components: {
     MyFooter
   }
 };
-
->>>>>>> Stashed changes
-
-  }
-});
-
-
-
-var app = new Vue ({
-  el: "#app",
-  data: {
-      color: "yellow",
-      type: "wool",
-  },
-});
