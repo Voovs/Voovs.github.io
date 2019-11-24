@@ -145,28 +145,29 @@ export default {
     }
   },
   mounted () {
-    window.addEventListener('keyup', k => {
+    window.is_brenna_mode = false
+    window.addEventListener('keyup', this.secret_password)
+  },
+  destroyed () {
+    delete window.is_brenna_mode
+  },
+  methods: {
+    secret_password (k) {
       let user_char_pos = this.password_data.user_char_pos
       let password = this.password_data.password
+
       if (k.key === password[user_char_pos]) {
         this.password_data.curr_user_entry += k.key
         this.password_data.user_char_pos += 1
-        console.log(this.password_data.curr_user_entry)
-        if (this.password_data.curr_user_entry === this.password_data.password) {
-          alert("brenna! 🎭")
-        }
-      } else if (k.key.match(/[a-z]/g)) {
+      } else {
         this.password_data.curr_user_entry = ''
         this.password_data.curr_char_pos = 0
-      } else {
-        console.error(`@home.js @mounted() broke with k.key | ${k.key}`)
-        window.removeEventListener('keyup')
       }
-    })
-  },
-  methods: {
-    key_pressed () {
-      alert("A key was hit")
+
+      if (this.password_data.curr_user_entry === this.password_data.password) {
+        window.is_brenna_mode = true
+        window.removeEventListener('keyup', this.secret_password)
+      }
     }
   },
   components: {
