@@ -11,9 +11,11 @@ export default {
         'transform': 'translateX(calc((100vw / 6) *' + (i - 1) + '))',
         'z-index': (100 - i)}">
       <div class="control-row">
-        <span @click="move_color_stripe(false, i, true)">&lt;</span>
+        <span
+          @click="move_color_stripe(false, i, true)">&lt;</span>
         <input v-model="colors[i]" type="text">
-        <span @click="move_color_stripe(true, i, true)">&gt;</span>
+        <span
+          @click="move_color_stripe(true, i, true)">&gt;</span>
       </div>
     </div>
     <!-- <div class="add-color vertical-column">
