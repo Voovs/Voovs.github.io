@@ -2,10 +2,7 @@
 
 
 .home
-  overflow-x: hidden
   .header
-    position: fixed
-    z-index: -1
     margin: 0
     width: 100%
     display: flex
@@ -38,26 +35,24 @@
       -o-transform: scaleX(-1)
       transform: scaleX(-1)
       user-select: none
-  .project-title-wrapper
-    padding-top: 10px
-    padding-bottom: 40px
-    width: 110vw
-    .project-title
-      margin: 0
-      margin-left: 40px
-      font-weight: 700
-      border-bottom: 5px solid
-      border-radius: 2px
-      width: 50px
-      text-decoration: none
-      overflow: visible
+  .project-title
+    margin: 40px
+    font-weight: 700
+    // text-decoration: underline
+    border-bottom: 5px solid
+    border-radius: 2px
+    width: 50px
+    overflow: visible
   .projects
-    display: block
+    display: flex
+    justify-content: center
+    align-items: center
     margin: 0
     width: 100%
-    height: 440px
-    .card-row
+    height: 400px
+    .project-card
       display: flex
+      flex-direction: column
       justify-content: space-evenly
       align-items: center
       margin: auto
@@ -73,6 +68,7 @@
         width: 300px
         height: 200px
         background-color: white
+        text-decoration: none
         overflow: hidden
         transition-property: transform, box-shadow
         transition-duration: 700ms
@@ -80,15 +76,6 @@
         .text-parent
           order: 1
           color: $ad_light
-          text-decoration: none
-          &:hover
-            text-decoration: none
-          &:visited
-            text-decoration: none
-          &:link
-            text-decoration: none
-          &:active
-            text-decoration: none
         .project-name
           align-self: center
           margin-top: 20px
@@ -113,33 +100,45 @@
       margin-top: 40px
       width: 725px
       justify-content: space-between
-      .project-card
+      align-self: flex-start
+      margin: 5px
+      border-radius: 20px 20px 0 0
+      width: 250px
+      height: 200px
+      background-color: white
+      overflow: hidden
+      .text-parent
+        order: 1
+      .project-name
+        align-self: center
+        margin-top: 20px
+        text-align: center
+      .description
+        margin: 15px
+      .edge-wave
+        order: 2
+        position: relative
+        top: 1px
+        align-self: flex-end
+        margin: 0
+        width: 100%
+        height: 20px
+        background: transparent url("../images/wave.svg") bottom center no-repeat
+        background-size: 200%
+      &:nth-child(2n)
         justify-content: flex-start
         align-self: flex-end
         border-radius: 0 0 20px 20px
         .text-parent
           order: 3
         .project-name
-          margin: 10px 0 20px 0
-        svg
+          margin: 0
+        .edge-wave
           position: relative
           top: -1px
-          height: 15.3px
-          -webkit-transform: rotateX(180deg)
-          -moz-transform: rotateX(180deg)
-          transform: rotateX(180deg)
-        &:nth-child(2)
-          svg
-            transform: rotateY(180deg) rotateX(180deg)
-  .quotes
-    span
-      display: block
-      font-size: 40px
-    @for $i from 1 through 9
-      span:nth-child(#{$i})
-        transform: rotateX((5 - $i) * 20deg)
-
-
+          -webkit-transform: rotate(180deg)
+          -moz-transform: rotate(180deg)
+          transform: rotate(180deg)
 
 
 
@@ -149,42 +148,30 @@
       background: radial-gradient(lighten($c_main, 30) 15%, transparent 16%) 0 0
       .left p:nth-child(2) span
         color: $c_main
-    .non-header-content
-      background-color: white
-    .project-title-wrapper
-      background-color: white
-      .project-title
-        border-color: $c_main
+    .project-title
+      border-color: $c_main
     .projects
-      background-color: white
       .project-card
         background: linear-gradient($c_dark, $c_main, $c_light)
-        svg
-          path
-            fill: white
 
 .dark
-  color: $ad_light
+  color: lighten($ad_light, 15)
   .home
     .header
       background: radial-gradient(darken($cd_main, 20) 15%, transparent 16%) 0 0
       background-color: $cd_dark
-      // color: #99AAB5
+      color: lighten($ad_light, 15)
       .left p:nth-child(2) span
         color: $cd_main
-    .non-header-content
-      background-color: $cd_dark
-    .project-title-wrapper
-      background-color: $cd_dark
-      .project-title
-        border-color: $cd_main
+    .project-title
+      border-color: $cd_main
     .projects
-      background-color: $cd_dark
       .project-card
         background: linear-gradient($cd_main, darken($cd_main, 10))
-        svg
-          path
-            fill: $cd_dark
+        .edge-wave
+          background: transparent url("../images/wave_dark.svg") bottom center no-repeat
+          background-size: 200%
+
 
 .frozen
   background-color: $cf_light
@@ -194,16 +181,11 @@
       background: radial-gradient(#d4edfb 15%, transparent 16%) 0 0
       .left p:nth-child(2) span
         color: $cf_dark
-    .non-header-content
-      background-color: $cf_light
-    .project-title-wrapper
-      background-color: $cf_light
-      .project-title
-        border-color: $cf_dark
+    .project-title
+      border-color: $cf_dark
     .projects
-      background-color: $cf_light
       .project-card
         background: linear-gradient($cf_dark, lighten($cf_dark, 10))
-        svg
-          path
-            fill: $cf_light
+        .edge-wave
+          background: transparent url("../images/wave_frozen.svg") bottom center no-repeat
+          background-size: 200%
