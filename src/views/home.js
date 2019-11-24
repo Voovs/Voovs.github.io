@@ -10,7 +10,7 @@ export default {
         <p>So I'm <span>awake</span></p>
       </div>
       <img
-        src="assets/images/head_shot_2019_final_small.jpg"
+        src="./src/assets/images/head_shot_2019_final_small.jpg"
         alt="Voovs's profile picture"
         class="header-image">
     </div>
@@ -76,15 +76,11 @@ export default {
   `,
   data () {
     return {
-      projects: [
+      projects_top: [
         { name: "Word Counter",
         description: "View words useage precentiles in graphs",
         image_url: "/images/mojave",
         path: "/"
-        },
-        { name: "Color schemer",
-        description: "Choose a color scheme for your site with helpful tips",
-        image_url: "/images/h_sierra",
         },
         { name: "Sierra",
         description: "Big IMac classic",
@@ -108,10 +104,6 @@ export default {
         image_url: "/images/mojave",
         path: "/"
         },
-        { name: "Yosemite",
-        description: "Baseline OS for modern OSX operations",
-        image_url: "/images/mojave",
-        }
       ],
     }
   },

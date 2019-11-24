@@ -60,6 +60,59 @@
 .home .projects .project-card {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  width: 1400px;
+  height: 200px;
+}
+.home .projects .project-card .project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: flex-start;
+  margin: 5px;
+  border-radius: 20px 20px 0 0;
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  text-decoration: none;
+  overflow: hidden;
+  transition-property: transform, box-shadow;
+  transition-duration: 700ms;
+  transition-timing-function: ease;
+}
+.home .projects .project-card .project-card .text-parent {
+  order: 1;
+  color: #99AAB5;
+}
+.home .projects .project-card .project-card .project-name {
+  align-self: center;
+  margin-top: 20px;
+  text-align: center;
+}
+.home .projects .project-card .project-card .description {
+  margin: 15px;
+}
+.home .projects .project-card .project-card svg {
+  order: 2;
+  align-self: flex-end;
+  margin: 0;
+  width: 300px;
+  height: 14.21px;
+}
+.home .projects .project-card .project-card:nth-child(2) svg {
+  transform: rotateY(180deg);
+}
+.home .projects .project-card .project-card:hover {
+  box-shadow: 0 3px -3px -3px white;
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+.home .projects .bottom-row {
+  margin: auto;
+  margin-top: 40px;
+  width: 725px;
   justify-content: space-between;
   align-self: flex-start;
   margin: 5px;
@@ -67,22 +120,20 @@
   width: 250px;
   height: 200px;
   background-color: white;
-  text-decoration: none;
   overflow: hidden;
 }
-.home .projects .project-card .text-parent {
+.home .projects .bottom-row .text-parent {
   order: 1;
-  color: #c5cfd5;
 }
-.home .projects .project-card .project-name {
+.home .projects .bottom-row .project-name {
   align-self: center;
   margin-top: 20px;
   text-align: center;
 }
-.home .projects .project-card .description {
+.home .projects .bottom-row .description {
   margin: 15px;
 }
-.home .projects .project-card .edge-wave {
+.home .projects .bottom-row .edge-wave {
   order: 2;
   position: relative;
   top: 1px;
@@ -93,18 +144,18 @@
   background: transparent url("../images/wave.svg") bottom center no-repeat;
   background-size: 200%;
 }
-.home .projects .project-card:nth-child(2n) {
+.home .projects .bottom-row:nth-child(2n) {
   justify-content: flex-start;
   align-self: flex-end;
   border-radius: 0 0 20px 20px;
 }
-.home .projects .project-card:nth-child(2n) .text-parent {
+.home .projects .bottom-row:nth-child(2n) .text-parent {
   order: 3;
 }
-.home .projects .project-card:nth-child(2n) .project-name {
+.home .projects .bottom-row:nth-child(2n) .project-name {
   margin: 0;
 }
-.home .projects .project-card:nth-child(2n) .edge-wave {
+.home .projects .bottom-row:nth-child(2n) .edge-wave {
   position: relative;
   top: -1px;
   -webkit-transform: rotate(180deg);

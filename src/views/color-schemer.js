@@ -94,12 +94,6 @@ export default {
       document.querySelector(`#stripe-${this.stripe_order[0]}`).children[0].children[0].style.visibility = 'hidden'
       document.querySelector(`#stripe-${this.stripe_order[5]}`).children[0].children[2].style.visibility = 'hidden'
     },
-    add_color (color_hex) {
-
-    },
-    remove_color (color_hex) {
-
-    },
   },
   mounted: function () {
     this.hide_end_arrows() // Hides left and right most arrows
