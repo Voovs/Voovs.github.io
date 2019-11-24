@@ -1,6 +1,4 @@
 
-
-
 export default {
   name : `my-footer`,
   template: `
