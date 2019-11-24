@@ -1,0 +1,638 @@
+/* Wireframe styles */
+.word-counter {
+  display: grid;
+  grid-template-columns: 2vw 29vw 29vw 2vw 36vw 2vw;
+  grid-template-rows: 116px 75px 40px 1fr 94px 1fr;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  padding: 0;
+}
+.word-counter .page-title {
+  grid-area: 1/1/2/7;
+  width: 100%;
+}
+.word-counter #light-toggle {
+  position: absolute;
+  left: calc(99vw - 100px);
+  top: 8px;
+}
+.word-counter .input-area {
+  grid-area: 2/2/5/4;
+  resize: none;
+}
+.word-counter .search-area {
+  grid-area: 2/5/3/6;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.word-counter .user-settings {
+  grid-area: 3/5/4/6;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.word-counter .user-settings .input {
+  padding-right: 1vw;
+}
+.word-counter .user-settings .line {
+  width: 100%;
+}
+.word-counter .search-list {
+  grid-area: 4/5/7/6;
+  overflow: auto;
+}
+.word-counter .search-list .word-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 5px;
+  overflow: visible;
+}
+.word-counter .search-list .word-card .word-column {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 15vw;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+.word-counter .search-list .word-card .stats-column {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+.word-counter .search-list .word-card .stats-column .labels {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 1vw;
+}
+.word-counter .search-list .word-card .stats-column .numbers {
+  display: flex;
+  flex-direction: column;
+}
+.word-counter .search-list .word-card .link {
+  width: 100%;
+}
+.word-counter .top-words-title {
+  grid-area: 5/2/6/3;
+}
+.word-counter .top-list-setting {
+  grid-area: 5/2/6/3;
+  align-self: end;
+  overflow: hidden;
+}
+.word-counter .top-list-setting input {
+  height: 20px;
+  width: 20px;
+  margin-bottom: 0;
+  margin-left: 10px;
+}
+.word-counter .top-list-setting .line {
+  height: 1px;
+  margin: 0;
+  margin-top: 6px;
+}
+.word-counter .top-words {
+  grid-area: 6/2/7/3;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.word-counter .top-words .top-list {
+  overflow-y: visible;
+}
+.word-counter .top-words .top-list .pairs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: flex-start;
+}
+.word-counter .top-words .top-list .percent {
+  flex-grow: 1;
+}
+.word-counter .top-words .top-list .words {
+  flex-grow: 1;
+  overflow-x: hidden;
+}
+.word-counter .total-words {
+  grid-area: 5/3/6/4;
+  align-self: center;
+  justify-self: center;
+}
+
+.main-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 33vh auto 75px 40px 1px 1fr;
+  height: 130vh;
+  width: 96vw;
+  overflow: hidden;
+  padding: 0 2vw;
+}
+.main-div .page-title {
+  grid-area: 1/1/2/3;
+  width: 100%;
+}
+.main-div #light-toggle {
+  position: absolute;
+  left: calc(99vw - 100px);
+  top: 8px;
+}
+.main-div .input-area {
+  grid-area: 2/1/3/3;
+}
+.main-div .total-words {
+  grid-area: 3/1/4/3;
+}
+.main-div .top-words-title {
+  grid-area: 4/1/5/2;
+}
+.main-div .search-area {
+  grid-area: 4/2/5/3;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.main-div .top-list-setting {
+  grid-area: 5/1/6/2;
+}
+.main-div .user-settings {
+  grid-area: 5/2/6/3;
+}
+.main-div .media-line {
+  grid-area: 6/1/7/3;
+}
+.main-div .top-words {
+  grid-area: 7/1/8/2;
+}
+.main-div .search-list {
+  grid-area: 7/2/8/3;
+}
+
+/* Static aesthetic styles */
+.word-counter {
+  transition: 300ms;
+  transition-timing-function: ease-in-out;
+}
+.word-counter .search-area {
+  padding-left: 10px;
+}
+.word-counter .media-line {
+  visibility: collapse;
+}
+
+.main-div-light {
+  transition: 300ms;
+  transition-timing-function: ease-in-out;
+  background-color: white;
+}
+.main-div-light #light-toggle .toggle-button {
+  fill: white;
+  stroke: #555151;
+}
+.main-div-light .input-area {
+  background-color: white;
+  border-radius: 10px;
+}
+.main-div-light .search-area {
+  background-color: white;
+  border-radius: 10px;
+}
+.main-div-light .user-settings {
+  color: #555151;
+}
+.main-div-light .user-settings .line {
+  background-color: black;
+  height: 1px;
+}
+.main-div-light .top-words-title {
+  font-size: 60px;
+}
+.main-div-light .search-list .word-card .link {
+  background-color: rgba(87, 169, 154, 0.2);
+  border-radius: 0 0 20px 20px;
+}
+.main-div-light .top-list-setting input {
+  border-radius: 50px;
+}
+.main-div-light .top-list-setting .line {
+  background-color: black;
+}
+.main-div-light .top-words .line {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 50px;
+  width: 98%;
+}
+.main-div-light .top-words .percent {
+  margin-right: 1.5vw;
+}
+.main-div-light .media-line {
+  border-color: black;
+}
+
+.main-div-dark {
+  transition: 300ms;
+  transition-timing-function: ease-in-out;
+  background-color: #555151;
+}
+.main-div-dark #light-toggle .toggle-button {
+  fill: #555151;
+  stroke: white;
+}
+.main-div-dark .input-area {
+  background-color: #555151;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.main-div-dark .search-area {
+  background-color: #555151;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.main-div-dark .user-settings {
+  color: white;
+}
+.main-div-dark .user-settings .line {
+  background-color: rgba(255, 255, 255, 0.4);
+  height: 1px;
+}
+.main-div-dark .top-words-title {
+  font-size: 60px;
+}
+.main-div-dark .search-list .word-card .link {
+  background-color: rgba(87, 169, 154, 0.2);
+  border-radius: 0 0 20px 20px;
+}
+.main-div-dark .top-list-setting input {
+  border-radius: 50px;
+}
+.main-div-dark .top-list-setting .line {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.main-div-dark .top-words .line {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50px;
+  width: 98%;
+}
+.main-div-dark .top-words .percent {
+  margin-right: 1.5vw;
+}
+.main-div-dark .media-line {
+  border-color: white;
+}
+
+@media (max-width: 1050px) {
+  .main-div .media-line {
+    visibility: visible;
+    width: 100%;
+    margin: 0;
+  }
+  .main-div .user-settings .line {
+    visibility: collapse;
+  }
+  .main-div .top-list-setting .line {
+    visibility: collapse;
+  }
+  .main-div .total-words {
+    margin: 2vh 0;
+  }
+}
+/* Text styles */
+.word-counter {
+  transition: 300ms;
+  transition-timing-function: ease-in-out;
+}
+.word-counter .input-area {
+  font-size: 1.78125vw;
+}
+.word-counter .search-list {
+  font-size: 1.875vw;
+}
+.word-counter .search-list .past-search .word-column span {
+  text-decoration: underline;
+  text-decoration-color: #57a99a;
+}
+.word-counter .search-list .word-card .word-column span {
+  font-size: 2.8vw;
+}
+.word-counter .search-list .word-card .stats-column .number {
+  text-decoration-color: #57a99a;
+}
+.word-counter .total-words {
+  font-size: 40px;
+}
+
+.main-div-light {
+  transition: 300ms;
+  transition-timing-function: ease-in-out;
+  color: #555151;
+}
+.main-div-light .page-title {
+  font-family: "source sans pro";
+  font-size: 100px;
+  text-align: center;
+  text-decoration: none;
+  color: #555151;
+}
+.main-div-light .input-area {
+  font-family: "source sans pro";
+  color: #555151;
+}
+.main-div-light .search-area {
+  font-family: "source sans pro";
+  font-size: 60px;
+  color: #555151;
+  resize: none;
+}
+.main-div-light .search-list {
+  font-size: 1.875vw;
+}
+.main-div-light .search-list .word-card {
+  color: #555151;
+}
+.main-div-light .search-list .word-card .link {
+  text-align: center;
+  text-decoration: none;
+  color: #555151;
+}
+.main-div-light .top-words-title {
+  color: #555151;
+  line-height: 0.9;
+}
+.main-div-light .top-list-setting label {
+  color: #555151;
+  font-size: 25px;
+}
+.main-div-light .top-words {
+  color: #555151;
+}
+.main-div-light .top-words .percent {
+  font-size: 3vw;
+}
+.main-div-light .top-words .words {
+  font-size: 3vw;
+}
+.main-div-light .total-words {
+  color: #555151;
+}
+
+.main-div-dark {
+  transition: 300ms;
+  transition-timing-function: ease-in-out;
+  color: #555151;
+}
+.main-div-dark .page-title {
+  font-family: "source sans pro";
+  font-size: 100px;
+  text-align: center;
+  text-decoration: none;
+  color: #ecf4f3;
+}
+.main-div-dark .input-area {
+  font-family: "source sans pro";
+  color: #ecf4f3;
+}
+.main-div-dark .search-area {
+  font-family: "source sans pro";
+  font-size: 60px;
+  color: #ecf4f3;
+  resize: none;
+}
+.main-div-dark .search-list .word-card {
+  color: #ecf4f3;
+}
+.main-div-dark .search-list .word-card .link {
+  text-align: center;
+  text-decoration: none;
+  color: #ecf4f3;
+}
+.main-div-dark .top-words-title {
+  color: #ecf4f3;
+  line-height: 0.9;
+}
+.main-div-dark .top-list-setting label {
+  color: #ecf4f3;
+  font-size: 25px;
+}
+.main-div-dark .top-words {
+  color: #ecf4f3;
+}
+.main-div-dark .top-words .percent {
+  font-size: 3vw;
+}
+.main-div-dark .top-words .words {
+  font-size: 3vw;
+}
+.main-div-dark .total-words {
+  color: #ecf4f3;
+}
+
+@media (max-width: 1050px) {
+  .main-div .page-title {
+    font-size: 11vw;
+  }
+  .main-div .top-words-title {
+    text-align: center;
+  }
+  .main-div .top-list-setting {
+    margin: auto;
+  }
+  .main-div .total-words {
+    font-size: 10vw;
+    line-height: 0.8;
+  }
+}
+/* Pseudo styles */
+.word-counter {
+  transition: 300ms;
+  transition-timing-function: ease-in-out;
+}
+.word-counter .page-title {
+  user-select: none;
+}
+.word-counter .top-words-title:hover {
+  cursor: default;
+}
+.word-counter .top-list-setting {
+  user-select: none;
+}
+.word-counter .top-words:hover {
+  cursor: default;
+}
+.word-counter .user-settings {
+  user-select: none;
+}
+.word-counter .search-list .word-card .word-column:hover {
+  cursor: default;
+}
+.word-counter .search-list .word-card .stats-column:hover {
+  cursor: default;
+}
+
+.main-div-light {
+  transition: 300ms;
+  transition-timing-function: ease-in-out;
+}
+.main-div-light .page-title::selection {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.main-div-light #light-toggle .toggle-button:hover {
+  transition: 300ms;
+  transition-timing-function: ease-in-out;
+  fill: #555151;
+  stroke: white;
+  cursor: pointer;
+}
+.main-div-light .input-area::selection {
+  background-color: #555151;
+  color: white;
+}
+.main-div-light .input-area:focus {
+  outline: none;
+  -webkit-box-shadow: 0px 0px 5px 2px #57a99a;
+  box-shadow: 0px 0px 5px 2px #57a99a;
+}
+.main-div-light .user-settings label::selection {
+  background-color: #555151;
+  color: white;
+}
+.main-div-light .search-area:focus {
+  outline: none;
+  -webkit-box-shadow: 0px 0px 5px 2px #57a99a;
+  box-shadow: 0px 0px 5px 2px #57a99a;
+}
+.main-div-light .search-area::selection {
+  background-color: #555151;
+  color: white;
+}
+.main-div-light .search-list .word-card .word-column span::selection {
+  background-color: #555151;
+  color: white;
+}
+.main-div-light .search-list .word-card .stats-column span::selection {
+  background-color: #555151;
+  color: white;
+}
+.main-div-light .search-list .word-card .stats-column .number::selection {
+  background-color: #555151;
+  color: white;
+}
+.main-div-light .search-list .word-card .link {
+  user-select: none;
+}
+.main-div-light .search-list .word-card .link:hover {
+  background-color: rgba(87, 169, 154, 0.4);
+}
+.main-div-light .top-words-title::selection {
+  background-color: #555151;
+  color: white;
+}
+.main-div-light .top-list-setting label::selection {
+  background-color: #555151;
+  color: white;
+}
+.main-div-light .top-list-setting input:focus {
+  outline: 1px solid #57a99a;
+  -webkit-box-shadow: 0px 0px 5px #57a99a;
+  box-shadow: 0px 0px 5px #57a99a;
+}
+.main-div-light .top-words .percent::selection {
+  background-color: #555151;
+  color: white;
+}
+.main-div-light .top-words .words::selection {
+  background-color: #555151;
+  color: white;
+}
+.main-div-light .total-words::selection {
+  background-color: #555151;
+  color: white;
+}
+
+.main-div-dark {
+  transition: 300ms;
+  transition-timing-function: ease-in-out;
+}
+.main-div-dark .page-title::selection {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.main-div-dark #light-toggle .toggle-button:hover {
+  transition: 300ms;
+  transition-timing-function: ease-in-out;
+  fill: white;
+  stroke: #555151;
+  cursor: pointer;
+}
+.main-div-dark .input-area::selection {
+  background-color: white;
+  color: black;
+}
+.main-div-dark .input-area:focus {
+  outline: none;
+  -webkit-box-shadow: 0px 0px 5px 2px #57a99a;
+  box-shadow: 0px 0px 5px 2px #57a99a;
+}
+.main-div-dark .user-settings label::selection {
+  background-color: white;
+  color: black;
+}
+.main-div-dark .search-area:focus {
+  outline: none;
+  -webkit-box-shadow: 0px 0px 5px 2px #57a99a;
+  box-shadow: 0px 0px 5px 2px #57a99a;
+}
+.main-div-dark .search-area::selection {
+  background-color: white;
+  color: black;
+}
+.main-div-dark .search-list .word-card .word-column span::selection {
+  background-color: white;
+  color: black;
+}
+.main-div-dark .search-list .word-card .stats-column span::selection {
+  background-color: white;
+  color: black;
+}
+.main-div-dark .search-list .word-card .stats-column .number::selection {
+  background-color: white;
+  color: black;
+}
+.main-div-dark .search-list .word-card .link {
+  user-select: none;
+}
+.main-div-dark .search-list .word-card .link:hover {
+  background-color: rgba(87, 169, 154, 0.4);
+}
+.main-div-dark .top-words-title::selection {
+  background-color: white;
+  color: black;
+}
+.main-div-dark .top-list-setting label::selection {
+  background-color: white;
+  color: black;
+}
+.main-div-dark .top-list-setting input:focus {
+  outline: 1px solid #57a99a;
+  -webkit-box-shadow: 0px 0px 5px #57a99a;
+  box-shadow: 0px 0px 5px #57a99a;
+}
+.main-div-dark .top-words .percent::selection {
+  background-color: white;
+  color: black;
+}
+.main-div-dark .top-words .words::selection {
+  background-color: white;
+  color: black;
+}
+.main-div-dark .total-words::selection {
+  background-color: white;
+  color: black;
+}
+
+/*# sourceMappingURL=word-counter.css.map */

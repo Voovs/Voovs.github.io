@@ -100,7 +100,7 @@ export default {
         { name: "Word Counter",
         description: "View words useage precentiles in graphs",
         image_url: "/images/mojave",
-        path: "/"
+        path: "/word-counter"
         },
         { name: "Sierra",
         description: "Big IMac classic",
@@ -132,11 +132,41 @@ export default {
         "Picard HappyCloud",
         "A failed audition is never a failed auditon",
         "SPEAK TO ME!!!",
-        "Another quote",
+        "The whole thing! You've got it",
         "Another quote",
         "Another quote",
         "Another quote",
       ],
+      password_data: {
+        password: 'brenna',
+        user_char_pos: 0,
+        curr_user_entry: '',
+      }
+    }
+  },
+  mounted () {
+    window.addEventListener('keyup', k => {
+      let user_char_pos = this.password_data.user_char_pos
+      let password = this.password_data.password
+      if (k.key === password[user_char_pos]) {
+        this.password_data.curr_user_entry += k.key
+        this.password_data.user_char_pos += 1
+        console.log(this.password_data.curr_user_entry)
+        if (this.password_data.curr_user_entry === this.password_data.password) {
+          alert("brenna! 🎭")
+        }
+      } else if (k.key.match(/[a-z]/g)) {
+        this.password_data.curr_user_entry = ''
+        this.password_data.curr_char_pos = 0
+      } else {
+        console.error(`@home.js @mounted() broke with k.key | ${k.key}`)
+        window.removeEventListener('keyup')
+      }
+    })
+  },
+  methods: {
+    key_pressed () {
+      alert("A key was hit")
     }
   },
   components: {

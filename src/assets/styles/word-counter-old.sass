@@ -1,0 +1,581 @@
+// @font-face
+//   font-family: YT_font
+//   src: url('../assets/Fonts/YT_font.ttf')
+// @font-face
+//   font-family: GT Walsheim
+//   src: url('../assets/Fonts/GT-Walsheim-Pro-Trial-Condensed-Medium.ttf')
+// @font-face
+//   font-family: 'source sans pro'
+//   src: url('../assets/Fonts/GT-Super-Display-Trial-Bold.ttf')
+// Grid-area: start-row / start-column / end-row / end-column
+
+/* Wireframe styles */
+.word-counter
+  display: grid
+  grid-template-columns: 2vw 29vw 29vw 2vw 36vw 2vw
+  grid-template-rows: 116px 75px 40px 1fr 94px 1fr
+  height: 100vh
+  width: 100vw
+  overflow: hidden
+  padding: 0
+  .page-title
+    grid-area: 1 / 1 / 2 / 7
+    width: 100%
+  #light-toggle
+    position: absolute
+    left: calc(99vw - 100px)
+    top: 8px
+  .input-area
+    grid-area: 2 / 2 / 5 / 4
+    resize: none
+  .search-area
+    grid-area: 2 / 5 / 3 / 6
+    white-space: nowrap
+    overflow-x: hidden
+    overflow-y: hidden
+  .user-settings
+    grid-area: 3 / 5 / 4 / 6
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: space-around
+    .input
+      padding-right: 1vw
+    .line
+      width: 100%
+  .search-list
+    grid-area: 4 / 5 / 7 / 6
+    overflow: auto
+    .word-card
+      display: flex
+      flex-direction: row
+      justify-content: space-around
+      flex-wrap: wrap
+      margin: 5px
+      overflow: visible
+      .word-column
+        display: flex
+        flex-direction: row
+        flex-basis: 15vw
+        justify-content: flex-start
+        align-items: center
+        overflow: hidden
+        // flex-grow: 1
+      .stats-column
+        display: flex
+        flex-direction: row
+        overflow: hidden
+        .labels
+          display: flex
+          flex-direction: column
+          align-items: flex-end
+          margin-right: 1vw
+        .numbers
+          display: flex
+          flex-direction: column
+      .link
+        width: 100%
+  .top-words-title
+    grid-area: 5 / 2 / 6 / 3
+  .top-list-setting
+    grid-area: 5 / 2 / 6 / 3
+    align-self: end
+    overflow: hidden
+    input
+      height: 20px
+      width: 20px
+      margin-bottom: 0
+      margin-left: 10px
+    .line
+      height: 1px
+      margin: 0
+      margin-top: 6px
+  .top-words
+    grid-area: 6 / 2 / 7 / 3
+    overflow-y: auto
+    overflow-x: hidden
+    .top-list
+      // display: flex
+      // flex-direction: column
+      overflow-y: visible
+      .pairs
+        display: flex
+        flex-direction: row
+        flex-wrap: nowrap
+        justify-content: space-around
+        align-items: center
+        align-content: flex-start
+      .percent
+        flex-grow: 1
+      .words
+        flex-grow: 1
+        overflow-x: hidden
+  .total-words
+    grid-area: 5 / 3 / 6 / 4
+    align-self: center
+    justify-self: center
+    // No syntax support from Atom, yet above works
+@media (max-width: 1050px)
+.main-div
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-template-rows: auto 33vh auto 75px 40px 1px 1fr
+  height: 130vh
+  width: 96vw
+  overflow: hidden
+  padding: 0 2vw
+  .page-title
+    grid-area: 1 / 1 / 2 / 3
+    width: 100%
+  #light-toggle
+    position: absolute
+    left: calc(99vw - 100px)
+    top: 8px
+  .input-area
+    grid-area: 2 / 1 / 3 / 3
+  .total-words
+    grid-area: 3 / 1 / 4 / 3
+  .top-words-title
+    grid-area: 4 / 1 / 5 / 2
+  .search-area
+    grid-area: 4 / 2 / 5 / 3
+    white-space: nowrap
+    overflow-x: hidden
+    overflow-y: hidden
+  .top-list-setting
+    grid-area: 5 / 1 / 6 / 2
+  .user-settings
+    grid-area: 5 / 2 / 6 / 3
+  .media-line
+    grid-area: 6 / 1 / 7 / 3
+  .top-words
+    grid-area: 7 / 1 / 8 / 2
+  .search-list
+      grid-area: 7 / 2 / 8 / 3
+
+/* Static aesthetic styles */
+.word-counter
+  transition: 300ms
+  transition-timing-function: ease-in-out
+  .search-area
+    padding-left: 10px
+  .media-line
+    visibility: collapse
+.main-div-light
+  transition: 300ms
+  transition-timing-function: ease-in-out
+  background-color: white
+  .page-title
+    // background-color: white
+  #light-toggle
+    .toggle-button
+      fill: white
+      stroke: #555151
+  .input-area
+    background-color: white
+    border-radius: 10px
+  .search-area
+    background-color: white
+    border-radius: 10px
+  .user-settings
+    color: #555151
+    .line
+      background-color: rgba(0, 0, 0, 1)
+      height: 1px
+      // box-shadow: 0 0px 2px 0 black
+  .top-words-title
+    font-size: 60px
+  .search-list
+    .word-card
+      // border: 2px solid rgba(255, 255, 255, .6)
+      // border-radius: 7px 7px 20px 20px
+      .link
+        background-color: rgba(87, 169, 154, .2)
+        border-radius: 0 0 20px 20px
+    .past-search
+      // border: 2px solid rgba(255, 255, 255, .2)
+  .top-list-setting
+    input
+      border-radius: 50px
+    .line
+      background-color: rgba(0, 0, 0, 1)
+  .top-words
+    .line
+      border: 1px solid rgba(0, 0, 0, .4)
+      border-radius: 50px
+      width: 98%
+    .percent
+      margin-right: 1.5vw
+      // border-right: .3vw solid rgba(255, 255, 255, .4)
+  .media-line
+    border-color: black
+.main-div-dark
+  transition: 300ms
+  transition-timing-function: ease-in-out
+  background-color: #555151
+  .page-title
+    // background-color: #555151
+  #light-toggle
+    .toggle-button
+      fill: #555151
+      stroke: white
+  .input-area
+    background-color: #555151
+    border-radius: 10px
+    border: 1px solid rgba(255, 255, 255, .5)
+  .search-area
+    background-color: #555151
+    border-radius: 10px
+    border: 1px solid rgba(255, 255, 255, .5)
+  .user-settings
+    color: white
+    .line
+      background-color: rgba(255, 255, 255, .4)
+      height: 1px
+      // box-shadow: 0 0px 2px 0 black
+  .top-words-title
+    font-size: 60px
+  .search-list
+    .word-card
+      // border: 2px solid rgba(0, 0, 0, .6)
+      // border-radius: 7px 7px 20px 20px
+      .link
+        background-color: rgba(87, 169, 154, .2)
+        border-radius: 0 0 20px 20px
+    .past-search
+      // border: 2px solid rgba(0, 0, 0, .2)
+  .top-list-setting
+    input
+      border-radius: 50px
+    .line
+      background-color: rgba(255, 255, 255, .4)
+  .top-words
+    .line
+      border: 1px solid rgba(255, 255, 255, .4)
+      border-radius: 50px
+      width: 98%
+    .percent
+      margin-right: 1.5vw
+      // border-right: .3vw solid rgba(255, 255, 255, .4)
+  .media-line
+    border-color: white
+@media (max-width: 1050px)
+  .main-div
+    .media-line
+      visibility: visible
+      width: 100%
+      margin: 0
+    .user-settings
+      .line
+        visibility: collapse
+    .top-list-setting
+      .line
+        visibility: collapse
+    .total-words
+      margin: 2vh 0
+/* Text styles */
+.word-counter
+  transition: 300ms
+  transition-timing-function: ease-in-out
+  .input-area
+    font-size: 1.78125vw
+  .search-list
+    font-size: 1.875vw
+    .past-search
+      .word-column
+        span
+          text-decoration: underline
+          text-decoration-color: #57a99a
+    .word-card
+      .word-column
+        span
+          font-size: 2.8vw
+      .stats-column
+        .number
+          // text-decoration: underline
+          text-decoration-color: #57a99a
+  .total-words
+    font-size: 40px
+.main-div-light
+  transition: 300ms
+  transition-timing-function: ease-in-out
+  color: #555151
+  .page-title
+    font-family: 'source sans pro'
+    font-size: 100px
+    text-align: center
+    text-decoration: none
+    color: #555151
+  .input-area
+    font-family: 'source sans pro'
+    // font-size: 20px
+    color: #555151
+  .search-area
+    font-family: 'source sans pro'
+    font-size: 60px
+    color: #555151
+    resize: none
+  .search-list
+    font-size: 1.875vw
+    // background-color: #57a99a
+    .word-card
+      color: #555151
+      .link
+        text-align: center
+        text-decoration: none
+        color: #555151
+  .top-words-title
+    color: #555151
+    line-height: .9
+  .top-list-setting
+    label
+      color: #555151
+      font-size: 25px
+  .top-words
+    color: #555151
+    .percent
+      font-size: 3vw
+    .words
+      font-size: 3vw
+  .total-words
+    color: #555151
+.main-div-dark
+  transition: 300ms
+  transition-timing-function: ease-in-out
+  color: #555151
+  .page-title
+    font-family: 'source sans pro'
+    font-size: 100px
+    text-align: center
+    text-decoration: none
+    color: #ecf4f3
+  .input-area
+    font-family: 'source sans pro'
+    // font-size: 20px
+    color: #ecf4f3
+  .search-area
+    font-family: 'source sans pro'
+    font-size: 60px
+    color: #ecf4f3
+    resize: none
+  .search-list
+    .word-card
+      color: #ecf4f3
+      .link
+        text-align: center
+        text-decoration: none
+        color: #ecf4f3
+  .top-words-title
+    color: #ecf4f3
+    line-height: .9
+  .top-list-setting
+    label
+      color: #ecf4f3
+      font-size: 25px
+  .top-words
+    color: #ecf4f3
+    .percent
+      font-size: 3vw
+    .words
+      font-size: 3vw
+  .total-words
+    color: #ecf4f3
+@media (max-width: 1050px)
+  .main-div
+    .page-title
+      font-size: 11vw
+    .top-words-title
+      text-align: center
+    .top-list-setting
+      margin: auto
+    .total-words
+      font-size: 10vw
+      line-height: .8
+/* Pseudo styles */
+.word-counter
+  transition: 300ms
+  transition-timing-function: ease-in-out
+  .page-title
+    user-select: none
+  .top-words-title
+    &:hover
+        cursor: default
+  .top-list-setting
+    user-select: none
+  .top-words
+    &:hover
+        cursor: default
+  .user-settings
+    user-select: none
+  .search-list
+    .word-card
+      .word-column
+        &:hover
+            cursor: default
+      .stats-column
+        &:hover
+          cursor: default
+.main-div-light
+  transition: 300ms
+  transition-timing-function: ease-in-out
+  .page-title
+    &::selection
+      background-color: rgba(0, 0, 0, .1)
+  #light-toggle
+    .toggle-button
+      &:hover
+        transition: 300ms
+        transition-timing-function: ease-in-out
+        fill: #555151
+        stroke: white
+        cursor: pointer
+  .input-area
+    &::selection
+      background-color: #555151
+      color: white
+    &:focus
+      outline: none
+      -webkit-box-shadow: 0px 0px 5px 2px #57a99a
+      box-shadow: 0px 0px 5px 2px #57a99a
+  .user-settings
+    label
+      &::selection
+        background-color: #555151
+        color: white
+  .search-area
+    &:focus
+      outline: none
+      -webkit-box-shadow: 0px 0px 5px 2px #57a99a
+      box-shadow: 0px 0px 5px 2px #57a99a
+    &::selection
+      background-color: #555151
+      color: white
+  .search-list
+    .word-card
+      .word-column
+        span
+          &::selection
+            background-color: #555151
+            color: white
+      .stats-column
+        span
+          &::selection
+            background-color: #555151
+            color: white
+        .number
+          &::selection
+            background-color: #555151
+            color: white
+      .link
+        user-select: none
+        &:hover
+          background-color: rgba(87, 169, 154, .4)
+  .top-words-title
+    &::selection
+      background-color: #555151
+      color: white
+  .top-list-setting
+    label
+      &::selection
+        background-color: #555151
+        color: white
+    input
+      &:focus
+        outline: 1px solid #57a99a
+        -webkit-box-shadow: 0px 0px 5px  #57a99a
+        box-shadow: 0px 0px 5px  #57a99a
+  .top-words
+    .percent
+      &::selection
+        background-color: #555151
+        color: white
+    .words
+      &::selection
+        background-color: #555151
+        color: white
+  .total-words
+    &::selection
+      background-color: #555151
+      color: white
+.main-div-dark
+  transition: 300ms
+  transition-timing-function: ease-in-out
+  .page-title
+    &::selection
+      background-color: rgba(255, 255, 255, .3)
+  #light-toggle
+    .toggle-button
+      &:hover
+        transition: 300ms
+        transition-timing-function: ease-in-out
+        fill: white
+        stroke: #555151
+        cursor: pointer
+  .input-area
+    &::selection
+      background-color: white
+      color: black
+    &:focus
+      outline: none
+      -webkit-box-shadow: 0px 0px 5px 2px #57a99a
+      box-shadow: 0px 0px 5px 2px #57a99a
+  .user-settings
+    label
+      &::selection
+        background-color: white
+        color: black
+  .search-area
+    &:focus
+      outline: none
+      -webkit-box-shadow: 0px 0px 5px 2px #57a99a
+      box-shadow: 0px 0px 5px 2px #57a99a
+    &::selection
+      background-color: white
+      color: black
+  .search-list
+    .word-card
+      .word-column
+        span
+          &::selection
+            background-color: white
+            color: black
+      .stats-column
+        span
+          &::selection
+            background-color: white
+            color: black
+        .number
+          &::selection
+            background-color: white
+            color: black
+      .link
+        user-select: none
+        &:hover
+          background-color: rgba(87, 169, 154, .4)
+  .top-words-title
+    &::selection
+      background-color: white
+      color: black
+  .top-list-setting
+    label
+      &::selection
+        background-color: white
+        color: black
+    input
+      &:focus
+        outline: 1px solid #57a99a
+        -webkit-box-shadow: 0px 0px 5px  #57a99a
+        box-shadow: 0px 0px 5px  #57a99a
+  .top-words
+    .percent
+      &::selection
+        background-color: white
+        color: black
+    .words
+      &::selection
+        background-color: white
+        color: black
+  .total-words
+    &::selection
+      background-color: white
+      color: black
