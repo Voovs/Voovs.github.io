@@ -14,8 +14,9 @@ body .theme-button-parent {
 }
 body .theme-button-parent #theme-svg {
   position: absolute;
-  top: 40px;
-  right: 40px;
+  top: 45px;
+  right: 45px;
+  border-radius: 50%;
   cursor: pointer;
 }
 
@@ -53,6 +54,54 @@ body .theme-button-parent #theme-svg {
 .frozen #theme-svg .theme-button:hover {
   fill: #f18b47;
   stroke: #30cfd0;
+}
+
+.brennalizing .theme-button-parent {
+  transition-property: visibility;
+  transition-delay: 7500ms;
+  visibility: hidden;
+}
+.brennalizing .theme-button-parent #theme-svg {
+  transition-property: box-shadow;
+  transition-duration: 3000ms;
+  transition-timing-function: linear;
+  transition-delay: 4500ms;
+  box-shadow: 0 0 10px 10px white, 0 0 10px 10px white;
+}
+.brennalizing .theme-button-parent #theme-svg circle {
+  transition-property: fill, stroke, box-shadow;
+  transition-duration: 3000ms;
+  transition-timing-function: linear;
+  transition-delay: 3500ms;
+  fill: white;
+  stroke: white;
+}
+.brennalizing .explode {
+  visibility: visible !important;
+  background-color: white;
+}
+.brennalizing .explode #theme-svg {
+  transition-property: height, width, top, right;
+  transition-duration: 3000ms;
+  transition-timing-function: cubic-bezier(0.52, 0.01, 1, 0.36);
+  transition-delay: 7500ms;
+  width: 1000vw;
+  height: 1000vh;
+  top: -500vh;
+  right: -500vw;
+}
+.brennalizing .explode #theme-svg circle {
+  fill: white;
+  stroke: white;
+  transition-property: r;
+  transition-duration: 3000ms;
+  transition-timing-function: cubic-bezier(0.52, 0.01, 1, 0.36);
+  transition-delay: 7500ms;
+  r: 1000vw !important;
+}
+.brennalizing .explode #theme-svg circle:hover {
+  fill: white;
+  stroke: white;
 }
 
 /*# sourceMappingURL=main.css.map */

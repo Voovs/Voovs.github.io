@@ -10,7 +10,7 @@ export default {
         <p>So I'm <span>awake</span></p>
       </div>
       <img
-        src="./src/assets/images/head_shot_2019_final_small.jpg"
+        src="../src/assets/images/head_shot_2019_final_small.jpg"
         alt="Voovs's profile picture"
         class="header-image">
     </div>
@@ -161,14 +161,60 @@ export default {
         this.password_data.user_char_pos += 1
       } else {
         this.password_data.curr_user_entry = ''
-        this.password_data.curr_char_pos = 0
+        this.password_data.user_char_pos = 0
       }
 
       if (this.password_data.curr_user_entry === this.password_data.password) {
         window.is_brenna_mode = true
+        this.run_brenna_anim(1)
         window.removeEventListener('keyup', this.secret_password)
       }
-    }
+    },
+    run_brenna_anim (stage) {
+      var time_fired = Date.now() - 1574639255268
+      switch (stage) {
+        case 1:
+          let new_button = document.querySelector('.theme-button-parent').cloneNode(true)
+          document.querySelector('body').insertBefore(new_button, document.querySelector('body').children[0])
+
+          document.querySelector('body').classList.add('brennalizing')
+          document.querySelector('body').children[0].classList.remove('theme-button-parent')
+          document.querySelector('body').children[0].classList.add('explode')
+          document.querySelector('.home').classList.add('shake-little')
+
+          this.run_brenna_anim(2)
+          break;
+        case 2:
+          window.setTimeout(() => {
+            document.querySelector('.home').classList.remove('shake-little')
+            this.run_brenna_anim(3)
+          }, 600)
+          break;
+        case 3:
+          window.setTimeout(() => {
+            document.querySelector('.home').classList.add('shake')
+            this.run_brenna_anim(4)
+          }, 1200)
+          break;
+        case 4:
+          window.setTimeout(() => {
+            document.querySelector('.home').classList.remove('shake')
+            this.run_brenna_anim(5)
+          }, 600)
+          break;
+        case 5:
+          window.setTimeout(() => {
+            document.querySelector('.home').classList.add('shake-hard')
+            this.run_brenna_anim(6)
+          }, 1200)
+          break;
+        case 6:
+          window.setTimeout(() => {
+            document.querySelector('.home').classList.remove('shake-hard')
+          }, 600)
+          break;
+      }
+    },
   },
   components: {
     MyFooter

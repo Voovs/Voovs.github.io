@@ -10,8 +10,9 @@ body
     #theme-svg
       // position: -webkit-sticky
       position: absolute
-      top: 40px
-      right: 40px
+      top: 45px
+      right: 45px
+      border-radius: 50%
       cursor: pointer
 
 .light
@@ -41,6 +42,47 @@ body
     fill: $c_main
     stroke: $ac_light
 
+.brennalizing
+  .theme-button-parent
+    transition-property: visibility
+    transition-delay: 7500ms
+    visibility: hidden
+    #theme-svg
+      transition-property: box-shadow
+      transition-duration: 3000ms
+      transition-timing-function: linear
+      transition-delay: 4500ms
+      box-shadow: 0 0 10px 10px white, 0 0 10px 10px white
+      circle
+        transition-property: fill, stroke, box-shadow
+        transition-duration: 3000ms
+        transition-timing-function: linear
+        transition-delay: 3500ms
+        fill: white
+        stroke: white
+  .explode
+    visibility: visible !important
+    background-color: white
+    #theme-svg
+      transition-property: height, width, top, right
+      transition-duration: 3000ms
+      transition-timing-function: cubic-bezier(0.52, 0.01, 1, 0.36)
+      transition-delay: 7500ms
+      width: 1000vw
+      height: 1000vh
+      top: -500vh
+      right: -500vw
+      circle
+        fill: white
+        stroke: white
+        transition-property: r
+        transition-duration: 3000ms
+        transition-timing-function: cubic-bezier(0.52, 0.01, 1, 0.36)
+        transition-delay: 7500ms
+        r: 1000vw !important
+        &:hover
+          fill: white
+          stroke: white
 
 
 
