@@ -174,12 +174,12 @@ export default {
       var time_fired = Date.now() - 1574639255268
       switch (stage) {
         case 1:
-          let new_button = document.querySelector('.theme-button-parent').cloneNode(true)
-          document.querySelector('body').insertBefore(new_button, document.querySelector('body').children[0])
+          // let new_button = document.querySelector('.theme-button-parent').cloneNode(true)
+          // document.querySelector('body').insertBefore(new_button, document.querySelector('body').children[0])
 
           document.querySelector('body').classList.add('brennalizing')
-          document.querySelector('body').children[0].classList.remove('theme-button-parent')
-          document.querySelector('body').children[0].classList.add('explode')
+          // document.querySelector('body').children[0].classList.remove('theme-button-parent')
+          // document.querySelector('body').children[0].classList.add('explode')
           document.querySelector('.home').classList.add('shake-little')
 
           this.run_brenna_anim(2)
