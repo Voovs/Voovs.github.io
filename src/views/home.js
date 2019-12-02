@@ -102,10 +102,10 @@ export default {
         image_url: "/images/mojave",
         path: "/word-counter"
         },
-        { name: "Sierra",
-        description: "Big IMac classic",
+        { name: "Poetry",
+        description: "Ever wanted to be caught in a Limerick hurricane? Well it's your lucky day. View all my poetic compositions in one spot",
         image_url: "/images/sierra",
-        path: "/"
+        path: "/poetry"
         },
         { name: "Generative art",
         description: "Planned page with examples of generative art",
